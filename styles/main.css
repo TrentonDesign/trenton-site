@@ -1,0 +1,56 @@
+/* Reset + Layout */
+body {
+  margin: 0;
+  padding: 0;
+  background: url('../assets/trentonbackground.png') no-repeat center center/cover;
+  font-family: 'Georgia', serif;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Animated Logo (image version, centered) */
+#logo {
+  height: 180px;
+  position: absolute;
+  top: 25%;                  /* vertical position - adjust as needed */
+  left: 50%;                 /* horizontal center */
+  transform: translate(-50%, -50%); /* perfect center */
+  animation: floatLogo 4s ease-in-out infinite alternate;
+  z-index: 1;
+}
+
+/* Float animation (left to right) */
+@keyframes floatLogo {
+  0% { transform: translate(-50%, -50%) translateX(-8px); }
+  100% { transform: translate(-50%, -50%) translateX(8px); }
+}
+
+/* Menu buttons */
+.menu {
+  position: absolute;
+  top: 40%;                /* place menu below logo */
+  left: 65%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.menu button {
+  background: transparent;
+  border: none;
+  color: black;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Georgia', serif;
+}
+
+/* Button hover effects */
+.menu button:hover {
+  color: white;
+  transform: scale(1.1);
+  z-index: 2;
+}
